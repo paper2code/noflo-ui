@@ -78,7 +78,7 @@
     "karma-webpack": "^3.0.5",
     "mocha": "^6.0.0",
     "noflo-component-loader": "^0.3.0",
-    "polymer-bundler": "^3.0.1",
+    "polymer-bundler": "^4.0.9",
     "puppeteer": "^1.0.0",
     "query-selector-shadow-dom": "^0.3.2",
     "sinon": "^7.2.4",
