@@ -115,7 +115,7 @@
             this.set('spec', {
               name: this.component.name,
               changed: false,
-              code: '',
+              code: this.getExampleSpec(),
               language: 'yaml',
               project: this.component.project,
               type: 'spec'
@@ -230,6 +230,21 @@
           });
         }
         return template;
+      },
+      getExampleSpec: function () {
+        var fbpSpec = '';
+        fbpSpec += 'name: ' + this.component.name + ' component\n';
+        fbpSpec += 'topic: ' + (this.project.namespace || this.project.id) + '/' + this.component.name + '\n';
+        fbpSpec += 'cases:\n';
+        fbpSpec += '  -\n';
+        fbpSpec += '    name: with an input packet\n';
+        fbpSpec += '    assertion: should send the same packet out\n';
+        fbpSpec += '    inputs:\n';
+        fbpSpec += '      in: true\n';
+        fbpSpec += '    expect:\n';
+        fbpSpec += '      out:\n';
+        fbpSpec += '        equals: true\n';
+        return fbpSpec;
       },
       themeChanged: function () {
         if (!this.codeEditor || !this.testsEditor) {
